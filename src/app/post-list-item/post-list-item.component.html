@@ -1,0 +1,20 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0}">
+
+  <div class="d-flex w-100 justify-content-between">
+    <button class="btn btn-default pull-right" (click)="onDeletePost(index)">
+      Delete
+    </button>
+    <span class="pull-right">{{ post.createdAt  | date: 'short' }}</span>
+
+    <h3 class="mb-1">{{ post.titre }}</h3>
+  </div>
+  <p class="mb-1">{{ post.contents }}</p>
+
+
+  <button class="btn btn-sm btn-success"
+          (click)="onlikeIt()">Like it</button>
+  <button class="btn btn-sm btn-danger"
+          (click)="onDontLike()">Dont't like </button>
+</li>
